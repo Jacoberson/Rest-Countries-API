@@ -6,8 +6,15 @@ module.exports = {
     width: {
       264: "264px",
     },
+    maxWidth: {
+      267: "267px",
+    },
     height: {
       336: "336px",
+      160: "160px",
+    },
+    maxHeight: {
+      160: "160px",
     },
     screens: {
       sm: "375px",
