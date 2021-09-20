@@ -3,6 +3,12 @@ module.exports = {
   purge: ["./pages/**/*.{js,ts,jsx,tsx}", "./components/**/*.{js,ts,jsx,tsx}"],
   darkMode: false, // or 'media' or 'class'
   theme: {
+    width: {
+      264: "264px",
+    },
+    height: {
+      336: "336px",
+    },
     screens: {
       sm: "375px",
       lg: "1440px",
@@ -19,11 +25,15 @@ module.exports = {
       12: "12px",
       14: "14px",
       16: "16px",
+      18: "18px",
     },
     fontWeight: {
       300: "300",
       600: "600",
       800: "800",
+    },
+    lineHeight: {
+      26: "26px",
     },
     borderRadius: {
       5: "5px",

@@ -6,12 +6,12 @@ const Filter = () => {
   return (
     <select
       name="regions"
-      className="w-48 h-auto mt-12 ml-4 lg:mr-20 shadow-search rounded-5">
-      <option value="" selected>
-        Filter by Region
-      </option>
+      className="w-48 h-auto mt-12 ml-4 lg:mr-20 shadow-search rounded-5 self-start lg:self-end">
+      <option defaultValue>Filter by Region</option>
       {regions.map(region => (
-        <option value={region}>{region}</option>
+        <option key={region} value={region}>
+          {region}
+        </option>
       ))}
     </select>
   );
