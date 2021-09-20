@@ -25,6 +25,15 @@ module.exports = {
       600: "600",
       800: "800",
     },
+    borderRadius: {
+      5: "5px",
+    },
+    backgroundImage: {
+      "search-icon": "url('/images/search-outline.svg')",
+    },
+    boxShadow: {
+      search: "0px 2px 9px rgba(0, 0, 0, 0.0532439)",
+    },
   },
   variants: {
     extend: {},
