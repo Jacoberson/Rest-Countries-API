@@ -4,7 +4,18 @@ import Search from "../components/Search";
 import Filter from "../components/Filter";
 import CountryDetails from "../components/CountryDetails";
 
-export default function Home() {
+export const getStaticProps = async () => {
+  const res = await fetch("https://restcountries.eu/rest/v2/all");
+  const countries = await res.json();
+
+  return {
+    props: {
+      countries,
+    },
+  };
+};
+
+export default function Home({ countries }) {
   return (
     <div>
       <Head>
@@ -12,11 +23,15 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Header />
-      <div className="flex flex-col lg:flex-row justify-center lg:justify-between">
+      <div className="flex flex-col justify-center lg:flex-row lg:justify-between">
         <Search />
         <Filter />
       </div>
-      <CountryDetails />
+      <div className="w-11/12 flex flex-col lg:flex-row lg:flex-wrap lg:ml-10">
+        {countries.map(country => (
+          <CountryDetails key={country.name} country={country} />
+        ))}
+      </div>
     </div>
   );
 }
