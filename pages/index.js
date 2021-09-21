@@ -1,3 +1,4 @@
+import React, { useState } from "react";
 import Head from "next/head";
 import Header from "../components/Header";
 import Search from "../components/Search";
@@ -16,6 +17,8 @@ export const getStaticProps = async () => {
 };
 
 export default function Home({ countries }) {
+  const [filteredCountries, setFilteredCountries] = useState(countries);
+
   return (
     <div>
       <Head>
@@ -25,10 +28,13 @@ export default function Home({ countries }) {
       <Header />
       <div className="flex flex-col justify-center lg:flex-row lg:justify-between">
         <Search />
-        <Filter />
+        <Filter
+          countries={countries}
+          setFilteredCountries={setFilteredCountries}
+        />
       </div>
       <div className="w-11/12 flex flex-col lg:flex-row lg:flex-wrap lg:ml-10">
-        {countries.map(country => (
+        {filteredCountries.map(country => (
           <CountryDetails key={country.name} country={country} />
         ))}
       </div>
