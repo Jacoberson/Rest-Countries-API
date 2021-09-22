@@ -12,7 +12,7 @@ const CountryDetails = ({ country }) => {
       <div className="w-264 h-336 mt-7 mb-4 ml-14 flex flex-col justify-center">
         <img
           src={country.flag}
-          alt="german flag"
+          alt={`${country} flag`}
           className="w-264 h-160 mb-6 mt-0 ml-0 mr-0 center"
         />
         <div className="ml-6">
@@ -21,17 +21,17 @@ const CountryDetails = ({ country }) => {
           </h2>
           <div className="flex flex-col">
             <span className="flex flex-row mb-2">
-              <p className="font-600 text-14 leading-4 mr-1">Population:</p>{" "}
+              <h3 className="font-600 text-14 leading-4 mr-1">Population:</h3>{" "}
               <p className="font-300 text-14 leading-4">
                 {addCommasToPopulation(country.population)}
               </p>
             </span>
             <span className="flex flex-row mb-2">
-              <p className="font-600 text-14 leading-4 mr-1">Region:</p>{" "}
+              <h3 className="font-600 text-14 leading-4 mr-1">Region:</h3>{" "}
               <p className="font-300 text-14 leading-4">{country.region}</p>
             </span>
             <span className="flex flex-row">
-              <p className="font-600 text-14 leading-4 mr-1">Capital:</p>{" "}
+              <h3 className="font-600 text-14 leading-4 mr-1">Capital:</h3>{" "}
               <p className="font-300 text-14 leading-4">{country.capital}</p>
             </span>
           </div>
