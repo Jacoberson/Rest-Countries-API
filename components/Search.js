@@ -4,7 +4,7 @@ const Search = () => {
   const [search, setSearch] = useState("");
 
   return (
-    <div className="w-11/12 ml-4 mt-10 lg:mt-12 lg:ml-20">
+    <div className="w-11/12 max-w-md ml-4 mt-10 lg:mt-12 lg:ml-20">
       <input
         value={search}
         placeholder="Search for a country..."

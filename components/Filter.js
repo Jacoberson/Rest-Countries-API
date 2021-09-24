@@ -8,7 +8,7 @@ const Filter = ({ countries, setFilteredCountries }) => {
       return setFilteredCountries(countries);
     }
     return setFilteredCountries(
-      countries.filter(country => country.region === region)
+      countries.filter(country => country.continent === region)
     );
   };
   return (

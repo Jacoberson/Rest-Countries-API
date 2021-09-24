@@ -2,6 +2,8 @@ import React from "react";
 import Link from "next/link";
 
 const CountryDetails = ({ country }) => {
+  const flag = country.flags[0];
+
   const addCommasToPopulation = population => {
     //adds commas to populations > 1,000
     return population.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
@@ -11,7 +13,7 @@ const CountryDetails = ({ country }) => {
     <Link href={`/country/${country.alpha3Code}`}>
       <div className="w-264 h-336 mt-7 mb-4 ml-14 flex flex-col justify-center">
         <img
-          src={country.flag}
+          src={flag}
           alt={`${country} flag`}
           className="w-264 h-160 mb-6 mt-0 ml-0 mr-0 center"
         />
