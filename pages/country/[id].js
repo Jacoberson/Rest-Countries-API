@@ -47,7 +47,7 @@ const Country = ({ country }) => {
             alt={`${country} flag`}
             className="w-320 h-229 mb-11 lg:w-560 lg:h-401"
           />
-          <div className="pr-44">
+          <div className="lg:pr-44">
             <h1 className="font-800 text-22 leading-30 lg:mt-7">
               {country.name}
             </h1>
@@ -99,17 +99,18 @@ const Country = ({ country }) => {
                     {country.topLevelDomain.map(domain => domain).join(", ")}
                   </p>
                 </span>
-                <span className="flex flex-row mb-1 mr-7">
+                <span className="flex flex-row mb-1">
                   <h3 className="font-400 text-14 leading-32 mr-2">
                     Currencies:
                   </h3>
                   <p className="font-300 text-14 leading-32">
-                    {country.currencies
-                      .map(currency => currency.name)
-                      .join(", ")}
+                    {country.currencies &&
+                      country.currencies
+                        .map(currency => currency.name)
+                        .join(", ")}
                   </p>
                 </span>
-                <span className="flex flex-row mb-1 mr-7">
+                <span className="flex flex-row mb-1">
                   <h3 className="font-400 text-14 leading-32 mr-2">
                     Languages:
                   </h3>
