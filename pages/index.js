@@ -27,7 +27,10 @@ export default function Home({ countries }) {
       </Head>
       <Header />
       <div className="flex flex-col justify-center lg:flex-row lg:justify-between">
-        <Search />
+        <Search
+          countries={countries}
+          setFilteredCountries={setFilteredCountries}
+        />
         <Filter
           countries={countries}
           setFilteredCountries={setFilteredCountries}
