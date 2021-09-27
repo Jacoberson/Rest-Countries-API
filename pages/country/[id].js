@@ -41,13 +41,13 @@ const Country = ({ country }) => {
             <button className="ml-2">Back</button>
           </Link>
         </div>
-        <section className="flex flex-col items-start ml-7 lg:flex-row lg:ml-20 lg:justify-between">
+        <section className="flex flex-col items-start ml-7 lg:flex-row lg:ml-20 lg:justify-between lg:pr-96">
           <img
             src={flag}
             alt={`${country} flag`}
             className="w-320 h-229 mb-11 lg:w-560 lg:h-401"
           />
-          <div className="lg:pr-44">
+          <div className="lg:pr-40">
             <h1 className="font-800 text-22 leading-30 lg:mt-7">
               {country.name}
             </h1>
