@@ -1,4 +1,5 @@
 import React from "react";
+import Link from "next/link";
 
 const BorderCountries = ({ borderCode, countries }) => {
   const borderCountry = countries
@@ -6,9 +7,11 @@ const BorderCountries = ({ borderCode, countries }) => {
     .map(country => country.name);
 
   return (
-    <button className="w-24 h-auto shadow-border rounded-sm mb-4 mr-2.5">
-      {borderCountry}
-    </button>
+    <Link href={`/country/${borderCode}`}>
+      <button className="w-24 h-auto shadow-border rounded-sm mb-4 mr-2.5">
+        {borderCountry}
+      </button>
+    </Link>
   );
 };
 

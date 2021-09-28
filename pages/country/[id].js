@@ -78,7 +78,7 @@ const Country = ({ country, countries, borders }) => {
                 <span className="flex flex-row mb-1">
                   <h3 className="font-400 text-14 leading-32 mr-2">Region:</h3>
                   <p className="font-300 text-14 leading-32">
-                    {country.continent}
+                    {country.region}
                   </p>
                 </span>
                 <span className="flex flex-row mb-1">
