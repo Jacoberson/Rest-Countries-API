@@ -1,5 +1,6 @@
 import Link from "next/link";
 import Header from "../../components/Header";
+import BorderCountries from "../../components/BorderCountries";
 
 export const getStaticPaths = async () => {
   const res = await fetch("https://restcountries.com/v2/all");
@@ -14,18 +15,23 @@ export const getStaticPaths = async () => {
 
 export const getStaticProps = async ({ params }) => {
   const res = await fetch(`https://restcountries.com/v2/alpha/${params.id}`);
+  let countries = await fetch("https://restcountries.com/v2/all");
+  countries = await countries.json();
   const country = await res.json();
+  const borders = country.borders
+    ? country.borders.map(border => border)
+    : null;
 
   return {
     props: {
+      countries,
       country,
+      borders,
     },
   };
 };
 
-const Country = ({ country }) => {
-  const flag = country.flags[0];
-
+const Country = ({ country, countries, borders }) => {
   const addCommasToPopulation = population => {
     //adds commas to populations > 1,000
     return population.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
@@ -41,11 +47,11 @@ const Country = ({ country }) => {
             <button className="ml-2">Back</button>
           </Link>
         </div>
-        <section className="flex flex-col items-start ml-7 lg:flex-row lg:ml-20 lg:justify-between lg:pr-96">
+        <section className="flex flex-col items-start ml-7 lg:flex-row lg:ml-20 lg:pr-96">
           <img
-            src={flag}
+            src={country.flag}
             alt={`${country} flag`}
-            className="w-320 h-229 mb-11 lg:w-560 lg:h-401"
+            className="w-320 h-229 mb-11 lg:w-560 lg:h-401 lg:mr-28"
           />
           <div className="lg:pr-40">
             <h1 className="font-800 text-22 leading-30 lg:mt-7">
@@ -120,6 +126,24 @@ const Country = ({ country }) => {
                       .join(", ")}
                   </p>
                 </span>
+              </div>
+            </div>
+            <div className="my-8">
+              <h3 className="font-600 text-16 leading-6 mb-4">
+                Border Countries:
+              </h3>
+              <div className="flex flex-row flex-wrap mr-7 mb-11">
+                {borders ? (
+                  borders.map(border => (
+                    <BorderCountries
+                      key={border}
+                      borderCode={border}
+                      countries={countries}
+                    />
+                  ))
+                ) : (
+                  <p>This country has no borders</p>
+                )}
               </div>
             </div>
           </div>
