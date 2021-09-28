@@ -47,7 +47,7 @@ const Country = ({ country, countries, borders }) => {
             <button className="ml-2">Back</button>
           </Link>
         </div>
-        <section className="flex flex-col items-start ml-7 lg:flex-row lg:ml-20 lg:pr-96">
+        <section className="flex flex-col items-start ml-7 lg:flex-row lg:ml-20">
           <img
             src={country.flag}
             alt={`${country} flag`}
@@ -58,7 +58,7 @@ const Country = ({ country, countries, borders }) => {
               {country.name}
             </h1>
             <div className="lg:flex lg:flex-row lg:mt-4">
-              <div className="flex flex-col mt-4">
+              <div className="flex flex-col mt-4 lg:mr-16">
                 <span className="flex flex-row mb-1">
                   <h3 className="font-400 text-14 leading-32 mr-2">
                     Native Name:
@@ -96,7 +96,7 @@ const Country = ({ country, countries, borders }) => {
                   </p>
                 </span>
               </div>
-              <div className="mt-8 lg:mt-4 lg:mr-20 lg:ml-32">
+              <div className="mt-8 lg:mt-4 lg:mr-20 lg:ml-16">
                 <span className="flex flex-row mb-1">
                   <h3 className="font-400 text-14 leading-32 mr-2">
                     Top Level Domain:
@@ -128,11 +128,11 @@ const Country = ({ country, countries, borders }) => {
                 </span>
               </div>
             </div>
-            <div className="my-8">
-              <h3 className="font-600 text-16 leading-6 mb-4">
+            <div className="my-8 lg:mt-18 lg:mb-0">
+              <h3 className="font-600 text-16 leading-6 mb-4 lg:mt-18 lg:inline">
                 Border Countries:
               </h3>
-              <div className="flex flex-row flex-wrap mr-7 mb-11">
+              <div className="flex flex-row flex-wrap mr-7 mb-11 lg:inline">
                 {borders ? (
                   borders.map(border => (
                     <BorderCountries
