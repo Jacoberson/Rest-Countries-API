@@ -20,7 +20,7 @@ export default function Home({ countries }) {
   const [filteredCountries, setFilteredCountries] = useState(countries);
 
   return (
-    <div className="max-w-1440">
+    <div className="max-w-1440 dark:bg-very-dark-blue-dk">
       <Head>
         <title>Where in the World?</title>
         <link rel="icon" href="/favicon.ico" />

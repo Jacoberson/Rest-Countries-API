@@ -8,7 +8,7 @@ const BorderCountries = ({ borderCode, countries }) => {
 
   return (
     <Link href={`/country/${borderCode}`}>
-      <button className="w-24 h-auto shadow-border rounded-sm mb-4 mr-2.5">
+      <button className="w-24 h-auto shadow-border rounded-sm mb-4 ml-2.5 dark:bg-dark-blue-dk">
         {borderCountry}
       </button>
     </Link>

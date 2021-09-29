@@ -9,14 +9,14 @@ const CountryDetails = ({ country }) => {
 
   return (
     <Link href={`/country/${country.alpha3Code}`}>
-      <div className="w-264 h-336 mt-7 mb-4 ml-14 flex flex-col justify-center">
+      <div className="w-264 h-336 mt-7 mb-4 ml-14 flex flex-col justify-center dark:bg-dark-blue-dk">
         <img
           src={country.flag}
           alt={`${country} flag`}
           className="w-264 h-160 mb-6 mt-0 ml-0 mr-0 center"
         />
         <div className="ml-6">
-          <h2 className="text-very-dark-blue-lt text-18 font-800 leading-26 mb-4">
+          <h2 className="text-very-dark-blue-lt text-18 font-800 leading-26 mb-4 dark:text-white">
             {country.name}
           </h2>
           <div className="flex flex-col">

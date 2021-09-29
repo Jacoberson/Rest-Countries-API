@@ -40,8 +40,8 @@ const Country = ({ country, countries, borders }) => {
   return (
     <>
       <Header />
-      <main className="flex flex-col">
-        <div className="w-16 mt-10 mb-16 ml-7 shadow-back lg:mt-20 lg:ml-20">
+      <main className="flex flex-col dark:bg-very-dark-blue-dk">
+        <div className="w-16 mt-10 mb-16 ml-7 shadow-back lg:mt-20 lg:ml-20 dark:bg-dark-blue-dk">
           <ion-icon name="arrow-back-outline" />
           <Link href="/">
             <button className="ml-2">Back</button>
@@ -86,7 +86,7 @@ const Country = ({ country, countries, borders }) => {
                     Sub Region:
                   </h3>
                   <p className="font-300 text-14 leading-32">
-                    {country.region}
+                    {country.subregion}
                   </p>
                 </span>
                 <span className="flex flex-row mb-1">

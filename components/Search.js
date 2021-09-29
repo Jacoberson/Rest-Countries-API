@@ -18,7 +18,7 @@ const Search = ({ countries, setFilteredCountries }) => {
         value={search}
         placeholder="Search for a country..."
         onChange={({ target }) => searchCountries(target.value)}
-        className="font-400 text-12 leading-5 shadow-search rounded-5 w-full bg-search-icon bg-no-repeat pl-14"
+        className="font-400 h-12 text-12 leading-5 shadow-search rounded-5 w-full bg-search-icon bg-no-repeat pl-14 dark:bg-dark-blue-dk dark:text-white"
       />
     </div>
   );
