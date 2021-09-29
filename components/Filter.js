@@ -14,7 +14,7 @@ const Filter = ({ countries, setFilteredCountries }) => {
   return (
     <select
       name="regions"
-      className="w-48 h-auto mt-12 ml-4 lg:mr-20 shadow-search rounded-5 self-start"
+      className="w-48 h-12 mt-12 ml-4 lg:mr-20 shadow-search rounded-5 self-start dark:bg-dark-blue-dk"
       onChange={({ target }) => filterCountries(target.value)}>
       <option disabled defaultValue>
         Filter by Region
